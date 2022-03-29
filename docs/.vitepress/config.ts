@@ -3,7 +3,7 @@ import { version } from '../../package.json'
 
 export default defineConfig({
   title: 'UnoCSS',
-  description: '即时的、按需引入的原子化CSS引擎',
+  description: '即时的、按需的、原子化CSS引擎',
   head: [
     ['meta', { property: 'og:title', content: 'UnoCSS' }],
     ['meta', { property: 'og:description', content: '即时的、按需引入的原子化CSS引擎' }],

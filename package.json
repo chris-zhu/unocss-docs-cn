@@ -1,0 +1,24 @@
+{
+  "name": "unocss-docs-cn",
+  "version": "1.0.0-beta.1",
+  "description": "unocss-docs-cn",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-zhu/unocss-docs-cn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chris-zhu/unocss-docs-cn/issues"
+  },
+  "homepage": "https://github.com/chris-zhu/unocss-docs-cn#readme",
+  "devDependencies": {
+    "vitepress": "^0.22.3"
+  }
+}

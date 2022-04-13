@@ -40,7 +40,7 @@ tailwindcss  v3.0.0-alpha.1    1290.96 ms / delta.   1282.66 ms (x243.05)
 
 UnoCSS 被设计为不具备：
 
-- CSS 预处理器 (e.g. `@apply`) - 但你可以使用 [shortcuts](#shortcuts).
+- CSS 预处理器 (e.g. `@apply`) - 但你可以使用 [快捷方式](#shortcuts).
 - Tailwind 插件系统 - 但您可以在几秒钟内编写自定义规则并将它们作为预设共享！
 
 ## 安装

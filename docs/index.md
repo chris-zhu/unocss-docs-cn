@@ -4,7 +4,7 @@ sidebar: false
 title: UnoCSS - 即时的、按需引入的原子化CSS引擎
 heroImage: /favicon.svg
 actionText: 快速开始
-actionLink: /指引/
+actionLink: /guide/
 
 altActionText: Playground
 altActionLink: https://unocss.antfu.me/

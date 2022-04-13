@@ -107,7 +107,7 @@ export default {
 }
 ```
 
-请参阅 [Nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 有关的完整文档 
+请参阅 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 有关的完整文档 
 
 ## 配置
 

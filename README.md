@@ -21,23 +21,7 @@
 <p align="center"><a href="https://unocss.antfu.me/">🤹‍♂️ Online Playground</a></p>
 <br>
 
-## Features
-
-Inspired by [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), and [Twind](https://github.com/tw-in-js/twind), but:
-
-- [Fully customizable](#configurations) - no core utilities, all functionalities are provided via presets.
-- No parsing, no AST, no scanning, it's **INSTANT** (200x faster than Windi CSS or Tailwind JIT).
-- ~3.5kb min+gzip - zero deps and browser friendly.
-- [Shortcuts](#shortcuts) - aliasing utilities, dynamically.
-- [Attributify Mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify/) - group utilities in attributes.
-- [Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/) - use any icon as a single class.
-- [Inspector](#inspector) - inspect and debug interactively.
-- [CSS-in-JS Runtime version](https://github.com/unocss/unocss/tree/main/packages/runtime)
-- [CSS Scoping](#css-scoping)
-- [VS Code extension](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
-- [Variant Groups](https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group) & [CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives)
-- Code-splitting for CSS - ships minimal CSS for MPA.
-- Library friendly - ships atomic styles with your component libraries, and safely scoped.
+## 特征
 
 受 [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), [Twind](https://github.com/tw-in-js/twind) 启发，但:
 

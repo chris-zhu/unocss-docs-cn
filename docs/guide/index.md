@@ -14,7 +14,7 @@ UnoCSS 是一个原子化 CSS 引擎，而不是一个框架。所有的设计�
 - [完全可定制](#configurations) - 没有核心实用程序，所有功能都通过预设提供
 - 无需解析，无需 AST，无需扫描，它是**即时**的（比 Windi CSS 或 Tailwind JIT 快 200 倍）
 - ~3.5kb min+gzip - 零依赖、浏览器友好
-- [快捷方式](#shortcuts) - 别名实用程序，动态的
+- [快捷方式](#shortcuts) - 可动态的别名实用程序
 - [属性模式](https://github.com/unocss/unocss/tree/main/packages/preset-attributify/) - 在属性中分组实用程序
 - [纯CSS图标](https://github.com/unocss/unocss/tree/main/packages/preset-icons/) - 单个 class 来使用任意图标
 - [Inspector](#inspector) - 以交互方式检查和调试

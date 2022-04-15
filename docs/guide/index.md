@@ -7,7 +7,7 @@ UnoCSS 是一个原子化 CSS 引擎，而不是一个框架。所有的设计�
 > 💡 我们强烈推荐阅读这篇博文 - **[Reimagine Atomic CSS](https://antfu.me/posts/reimagine-atomic-css)** 来了解其背后的故事
 
 
-## 特征
+## 特性
 
 受 [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), [Twind](https://github.com/tw-in-js/twind) 启发，但:
 

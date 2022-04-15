@@ -21,7 +21,7 @@
 <p align="center"><a href="https://unocss.antfu.me/">🤹‍♂️ Online Playground</a></p>
 <br>
 
-## 特征
+## 特性
 
 受 [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), [Twind](https://github.com/tw-in-js/twind) 启发，但:
 

@@ -38,7 +38,7 @@
 - CSS 的代码分割 - 为 MPA 提供最小的 CSS
 - 库友好 - 将原子样式与您的组件库一起提供并安全地限定范围
 
-###### Benchmark
+###### 基准
 
 ```
 3/26/2022, 11:41:26 PM
@@ -50,9 +50,9 @@ tailwindcss  v3.0.23           1621.38 ms / delta.   1608.96 ms (x187.79)
 windicss     v3.5.1            1855.86 ms / delta.   1843.45 ms (x215.16)
 ```
 
-###### Non-goal
+###### 非目标
 
-UnoCSS is designed **NOT** to be/have:
+UnoCSS 被设计为不具备：
 
 - ~~A CSS preprocessor (e.g. `@apply`)~~ - Yes, you can now: [CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives)
 - Tailwind's plugin system - but you can write custom rules in seconds and share them as presets!

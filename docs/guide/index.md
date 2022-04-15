@@ -1,11 +1,10 @@
 
-## 什么是 unocss？
+## 什么是 UnoCSS
 
 UnoCSS 是一个原子化 CSS 引擎，而不是一个框架。所有的设计都考虑到了灵活性和性能。在 UnoCSS 中，没有核心实体程序，所有功能都是通过预置提供。
 
 
 > 💡 我们强烈推荐阅读这篇博文 - **[Reimagine Atomic CSS](https://antfu.me/posts/reimagine-atomic-css)** 来了解其背后的故事
-
 
 ## 特性
 
@@ -40,7 +39,7 @@ tailwindcss  v3.0.0-alpha.1    1290.96 ms / delta.   1282.66 ms (x243.05)
 
 UnoCSS 被设计为不具备：
 
-- CSS 预处理器 (e.g. `@apply`) - 但你可以使用 [快捷方式](#shortcuts).
+- ~~A CSS preprocessor (e.g. `@apply`)~~ - 是的，你现在可以使用[CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives)
 - Tailwind 插件系统 - 但您可以在几秒钟内编写自定义规则并将它们作为预设共享！
 
 ## 安装
@@ -75,7 +74,7 @@ import 'uno.css'
 
 请参阅 [Vite](https://github.com/unocss/unocss/blob/main/packages/vite/README.md) 上的完整文档:
 - modes: `global`, `dist-chunk`, `per-module`, `vue-scoped`, `svelte-scoped`, and `shadow-dom`.
-- frameworks: `React`, `Preact`, `Svelte`, `SvelteKit`, `Web Components`, `Solid` and `Elm`.
+- frameworks: `React`, `Preact`, `Svelte`, `SvelteKit`, `Web Components`, `Solid`, and `Elm`.
 
 ### Nuxt
 
@@ -93,12 +92,11 @@ export default {
 }
 ```
 
-请参阅 [https://github.com/unocss/unocss/tree/main/packages/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 上的完整文档
+请参阅 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 上的完整文档
 
 
 
-## Editor setup
-
+## 编辑器设置
 
 ### Vscode
 

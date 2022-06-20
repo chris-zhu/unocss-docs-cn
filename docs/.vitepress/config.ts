@@ -6,11 +6,11 @@ export default defineConfig({
   description: '即时、按需的原子化CSS引擎',
   head: [
     ['meta', { property: 'og:title', content: 'UnoCSS' }],
-    ['meta', { property: 'og:description', content: '即时的、按需引入的原子化CSS引擎' }],
+    ['meta', { property: 'og:description', content: '按需引入、即时原子化CSS引擎' }],
     ['meta', { property: 'og:url', content: 'https://github.com/unocss/unocss' }],
     ['meta', { property: 'og:image', content: 'https://repository-images.githubusercontent.com/412152628/30d80147-4535-4ff1-9837-b9015eecbb07' }],
     ['meta', { name: 'twitter:title', content: 'UnoCSS' }],
-    ['meta', { name: 'twitter:description', content: '即时的、按需引入的原子化CSS引擎' }],
+    ['meta', { name: 'twitter:description', content: '按需引入、即时原子化CSS引擎' }],
     ['meta', { name: 'twitter:image', content: 'https://repository-images.githubusercontent.com/412152628/30d80147-4535-4ff1-9837-b9015eecbb07' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],

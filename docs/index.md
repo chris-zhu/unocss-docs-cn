@@ -3,11 +3,11 @@ layout: home
 sidebar: false
 
 title: UnoCSS
-titleTemplate: 即时的、按需引入的原子化CSS引擎
+titleTemplate: 按需引入、即时原子化CSS引擎
 
 hero:
   name: UnoCSS
-  text: 即时的、按需引入的原子化CSS引擎
+  text: 按需引入、即时原子化CSS引擎
   image: 
     src: /logo.png
     alt: UnoCSS

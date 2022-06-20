@@ -16,31 +16,26 @@ UnoCSS 是一个原子化 CSS 引擎，而不是一个框架。所有的设计�
 - [快捷方式](#shortcuts) - 可动态的别名实用程序
 - [属性模式](https://github.com/unocss/unocss/tree/main/packages/preset-attributify/) - 在属性中分组实用程序
 - [纯CSS图标](https://github.com/unocss/unocss/tree/main/packages/preset-icons/) - 单个 class 来使用任意图标
+- [Variant Groups](https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group) - 具有公共前缀的简写实用程序组
+- [CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives) - 在CSS中使用@apply指令
+- [Compilation mode](https://github.com/unocss/unocss/tree/main/packages/transformer-compile-class/) - 在构建时将多个类合成为一个类。
 - [Inspector](#inspector) - 以交互方式检查和调试
-- [CSS-in-JS 运行时版本](https://github.com/unocss/unocss/tree/main/packages/runtime)
+- [CSS-in-JS Runtime build](https://github.com/unocss/unocss/tree/main/packages/runtime) - 使用带有一行 CDN 导入的 UnoCSS。
 - [CSS Scoping](#css-scoping)
 - [VS Code 扩展](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
 - CSS 的代码分割 - 为 MPA 提供最小的 CSS
-- 库友好 - 将原子样式与您的组件库一起提供并安全地限定范围
 
 ###### 基准
 
 ```
-11/5/2021, 4:26:57 AM
+3/26/2022, 11:41:26 PM
 1656 utilities | x50 runs (min build time)
 
-none                              8.30 ms / delta.      0.00 ms 
-unocss       v0.4.15             13.58 ms / delta.      5.28 ms (x1.00)
-windicss     v3.2.1             989.57 ms / delta.    981.27 ms (x185.94)
-tailwindcss  v3.0.0-alpha.1    1290.96 ms / delta.   1282.66 ms (x243.05)
+none                             12.42 ms / delta.      0.00 ms
+unocss       v0.30.6             20.98 ms / delta.      8.57 ms (x1.00)
+tailwindcss  v3.0.23           1621.38 ms / delta.   1608.96 ms (x187.79)
+windicss     v3.5.1            1855.86 ms / delta.   1843.45 ms (x215.16)
 ```
-
-###### 非目标
-
-UnoCSS 被设计为不具备：
-
-- ~~A CSS preprocessor (e.g. `@apply`)~~ - 是的，你现在可以使用[CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives)
-- Tailwind 插件系统 - 但您可以在几秒钟内编写自定义规则并将它们作为预设共享！
 
 ## 安装
 
@@ -70,11 +65,9 @@ import 'uno.css'
 
 就是这样，玩的开心。
 
-查看[所有 packages](https://github.com/unocss/unocss/tree/main/packages).
+在 [@unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite) 上了解更多
 
-请参阅 [Vite](https://github.com/unocss/unocss/blob/main/packages/vite/README.md) 上的完整文档:
-- modes: `global`, `dist-chunk`, `per-module`, `vue-scoped`, `svelte-scoped`, and `shadow-dom`.
-- frameworks: `React`, `Preact`, `Svelte`, `SvelteKit`, `Web Components`, `Solid`, and `Elm`.
+查看[所有 packages](https://github.com/unocss/unocss/tree/main/packages).
 
 ### Nuxt
 
@@ -92,7 +85,7 @@ export default {
 }
 ```
 
-请参阅 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 上的完整文档
+在 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 上了解更多
 
 
 
@@ -100,10 +93,22 @@ export default {
 
 ### Vscode
 
-  官方的 [unocss vscode extension](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 扩展为编辑器提供了很好的体验。
+#### 特性
 
-  它默认具有：
+官方的 [unocss vscode extension](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 扩展为编辑器提供了很好的体验。
 
-  - 匹配实用程序的装饰和工具提示
-  - 从 `uno.config.js` 、 `vite.config.js` 或者 `nuxt.config.js` 加载配置
-  - 匹配实用程序的计数
+它默认具有：
+
+- 匹配实用程序的装饰和工具提示
+- 从 `uno.config.js`, `vite.config.js`, `svelte.config.js`, `astro.config.js`, `iles.config.js` or `nuxt.config.js` (or `.ts`) 加载配置
+- 匹配实用程序的计数
+
+#### 配置
+
+默认情况下，扩展将搜索项目根目录下的配置文件。当没有找到配置时，扩展将被禁用。要使用 monorepo，您​​需要将您的unocss.root选项更改为setting.json包含配置文件的目录。
+
+```javascript
+{
+  "unocss.root": "packages/client"
+}
+```

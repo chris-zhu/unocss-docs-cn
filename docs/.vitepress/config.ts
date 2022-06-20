@@ -18,10 +18,12 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/logo.png',
-    repo: 'unocss/unocss',
-    docsBranch: 'main',
-    editLinks: true,
-    editLinkText: 'Suggest changes to this page',
+    // editLink:{
+    //   // repo: 'unocss/unocss',
+    //   // branch: 'main',
+    //   pattern: '',
+    //   text: 'Suggest changes to this page',
+    // },
     nav: [
       { text: '指引', link: '/guide/' },
       {
@@ -43,10 +45,27 @@ export default defineConfig({
           { text: 'Attributify', link: '/presets/attributify' },
           { text: 'Typography', link: '/presets/typography' },
           { text: 'Web Fonts', link: '/presets/web-fonts' },
+          { text: 'rem-to-px', link: '/presets/rem-to-px' },
+          { text: 'Tagify', link: '/presets/tagify' },
+        ],
+      },
+      {
+        text: '转换器',
+        items: [
+          { text: 'Directives', link: '/transformer/directives' },
+          { text: 'Variant Group', link: '/transformer/variant-group' },
+          { text: 'Compile Class', link: '/transformer/compile-class' },
         ],
       },
       { text: '配置', link: '/config/' },
-      { text: 'Playground', link: 'https://unocss.antfu.me/' },
+      { 
+        text: 'Meta', 
+        items: [
+          {text: '规则', link: '/meta/rules'},
+          {text: '变体', link: '/meta/variants'},
+        ]
+      },
+      // { text: 'Playground', link: 'https://unocss.antfu.me/' },
       {
         text: `v${version}`,
         items: [
@@ -61,8 +80,12 @@ export default defineConfig({
         ],
       },
     ],
-    sidebar: {
-      '/config': 'auto',
-    },
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/unocss/unocss' },
+    ],
+    // sidebar: {
+    //   '/config': 'auto',
+    // },
   },
 })

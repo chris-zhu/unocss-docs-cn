@@ -1,13 +1,29 @@
 ---
-home: true
+layout: home
 sidebar: false
-title: UnoCSS - 即时的、按需引入的原子化CSS引擎
-heroImage: /favicon.svg
-actionText: 快速开始
-actionLink: /guide/
 
-altActionText: Playground
-altActionLink: https://unocss.antfu.me/
+title: UnoCSS
+titleTemplate: 即时的、按需引入的原子化CSS引擎
+
+hero:
+  name: UnoCSS
+  text: 即时的、按需引入的原子化CSS引擎
+  image: 
+    src: /logo.png
+    alt: UnoCSS
+
+  actions:
+    - theme: brand
+      text: 快速开始
+      link: /guide/
+
+    - theme: alt
+      text: Interactive
+      link: https://uno.antfu.me/
+    
+    - theme: alt
+      text: Playground
+      link: https://uno.antfu.me/play
 
 features:
   - title: ⚙️ 完全可定制
@@ -26,10 +42,12 @@ features:
 footer: MIT Licensed | Copyright © 2021-present Anthony Fu & UnoCSS Contributors
 ---
 
-## 赞助商
+<br/>
+<br/>
+<br/>
 
 <p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
+  <!-- <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg"> -->
     <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
+  <!-- </a> -->
 </p>

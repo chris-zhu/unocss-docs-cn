@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --c-text-light: #939393;
     --c-brand: #ff718b;
     --c-brand-light: #ff718b;
@@ -40,7 +40,6 @@
     margin-right: 0.5rem !important;
   }
   
-  /* Overrides */
   .custom-block.tip {
     border-color: var(--c-accent) !important;
     background-color: #90C32130 !important;
@@ -49,4 +48,4 @@
   th, td {
     border: 1px solid #8885;
   }
-  
+   */

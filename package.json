@@ -12,7 +12,7 @@
     "url": "git+https://github.com/chris-zhu/unocss-docs-cn.git"
   },
   "keywords": ["unocss", "unocss-docs", "unocss-docs-cn"],
-  "author": "",
+  "author": "chris-zhu <https://github.com/chris-zhu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chris-zhu/unocss-docs-cn/issues"

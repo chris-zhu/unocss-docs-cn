@@ -24,25 +24,26 @@ The instant on-demand Atomic CSS engine.
 </p>
 <br>
 
-## Features
+## 特性
 
-Inspired by [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), and [Twind](https://github.com/tw-in-js/twind), but:
+受 [Windi CSS](http://windicss.org/), [Tailwind CSS](https://tailwindcss.com/), [Twind](https://github.com/tw-in-js/twind) 启发，但:
 
-- [Fully customizable](#configurations) - no core utilities, all functionalities are provided via presets.
-- No parsing, no AST, no scanning, it's **INSTANT** (200x faster than Windi CSS or Tailwind JIT).
-- ~5kb min+gzip - zero deps and browser friendly.
-- [Shortcuts](#shortcuts) - aliasing utilities, dynamically.
-- [Attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify/) - group utilities in attributes.
-- [Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/) - use any icon as a single class.
-- [Variant Groups](https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group) - shorthand for group utils with common prefixes.
-- [CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives) - reuse utils in CSS with `@apply` directive.
-- [Compilation mode](https://github.com/unocss/unocss/tree/main/packages/transformer-compile-class/) - synthesizes multiple classes into one at build time.
-- [Inspector](#inspector) - inspect and debug interactively.
-- [CSS-in-JS Runtime build](https://github.com/unocss/unocss/tree/main/packages/runtime) - use UnoCSS with one line of CDN import.
-- [VS Code extension](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
-- Code-splitting for CSS - ships minimal CSS for MPA.
+- [完全可定制](#configurations) - 没有核心实用程序，所有功能都通过预设提供
+- 无需解析，无需 AST，无需扫描，它是**即时**的（比 Windi CSS 或 Tailwind JIT 快 200 倍）
+- ~3.5kb min+gzip - 零依赖、浏览器友好
+- [快捷方式](#shortcuts) - 可动态的别名实用程序
+- [属性模式](https://github.com/unocss/unocss/tree/main/packages/preset-attributify/) - 在属性中分组实用程序
+- [纯CSS图标](https://github.com/unocss/unocss/tree/main/packages/preset-icons/) - 单个 class 来使用任意图标
+- [Variant Groups](https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group) - 具有公共前缀的简写实用程序组
+- [CSS Directives](https://github.com/unocss/unocss/tree/main/packages/transformer-directives) - 在CSS中使用@apply指令
+- [Compilation mode](https://github.com/unocss/unocss/tree/main/packages/transformer-compile-class/) - 在构建时将多个类合成为一个类。
+- [Inspector](#inspector) - 以交互方式检查和调试
+- [CSS-in-JS Runtime build](https://github.com/unocss/unocss/tree/main/packages/runtime) - 使用带有一行 CDN 导入的 UnoCSS。
+- [CSS Scoping](#css-scoping)
+- [VS Code 扩展](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
+- CSS 的代码分割 - 为 MPA 提供最小的 CSS
 
-###### Benchmark
+###### 基准
 
 ```
 3/26/2022, 11:41:26 PM
@@ -54,7 +55,7 @@ tailwindcss  v3.0.23           1621.38 ms / delta.   1608.96 ms (x187.79)
 windicss     v3.5.1            1855.86 ms / delta.   1843.45 ms (x215.16)
 ```
 
-## Installation
+## 安装
 
 ### Vite
 
@@ -73,18 +74,18 @@ export default {
 }
 ```
 
-Add `uno.css` to your main entry:
+在你的主入口添加 `uno.css`
 
 ```ts
 // main.ts
 import 'uno.css'
 ```
 
-That's it, have fun.
+就是这样，玩的开心。
 
-Learn more at [@unocss/vite](https://github.com/unocss/unocss/blob/main/packages/vite).
+在 [@unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite) 上了解更多
 
-See [all packages](https://github.com/unocss/unocss/tree/main/packages).
+查看[所有 packages](https://github.com/unocss/unocss/tree/main/packages).
 
 ### Nuxt
 
@@ -96,21 +97,20 @@ npm i -D @unocss/nuxt
 // nuxt.config.js
 
 export default {
-  modules: [
+  buildModules: [
     '@unocss/nuxt',
   ],
 }
 ```
 
-Learn more at [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt)
+在 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 上了解更多
 
-## Configurations
 
-UnoCSS is an atomic-CSS engine instead of a framework. Everything is designed with flexibility and performance in mind. There are no core utilities in UnoCSS, all functionalities are provided via presets.
+## 配置
 
-By default, UnoCSS applies [the default preset](https://github.com/unocss/unocss/tree/main/packages/preset-uno), which provides a common superset of the popular utilities-first frameworks Tailwind CSS, Windi CSS, Bootstrap, Tachyons, etc.
+默认情况下，UnoCSS 应用 [默认预设](https://github.com/unocss/unocss/tree/main/packages/preset-uno)，它提供了流行的实用程序优先框架 Tailwind CSS、Windi 的通用超集 CSS、Bootstrap、Tachyons 等
 
-For example: `ml-3` (Tailwind), `ms-2` (Bootstrap), `ma4` (Tachyons), and `mt-10px` (Windi CSS) are all valid.
+例如：`ml-3` (Tailwind)、`ms-2` (Bootstrap)、`ma4` (Tachyons) 和`mt-10px` (Windi CSS) 都是有效的。
 
 ```css
 .ma4 { margin: 1rem; }
@@ -119,33 +119,33 @@ For example: `ml-3` (Tailwind), `ms-2` (Bootstrap), `ma4` (Tachyons), and `mt-10
 .mt-10px { margin-top: 10px; }
 ```
 
-Learn more about [the default preset](https://github.com/unocss/unocss/tree/main/packages/preset-uno).
+了解更多关于[默认预设](https://github.com/unocss/unocss/tree/main/packages/preset-uno)。
 
-### Presets
+### 预设
 
-Presets are the heart of UnoCSS. They let you make your own custom framework in minutes.
+预设是 UnoCSS 的核心。 它们让您在几分钟内创建自己的自定义框架。
 
-###### Official Presets
+###### 官方预设
 
-- [@unocss/preset-uno](https://github.com/unocss/unocss/tree/main/packages/preset-uno) - The default preset (right now it's equivalent to `@unocss/preset-wind`).
-- [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini) - The minimal but essential rules and variants.
-- [@unocss/preset-wind](https://github.com/unocss/unocss/tree/main/packages/preset-wind) - Tailwind / Windi CSS compact preset.
-- [@unocss/preset-attributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify) - Provides [Attributify Mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode) to other presets and rules.
-- [@unocss/preset-icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons) - Use any icon as a class utility.
-- [@unocss/preset-web-fonts](https://github.com/unocss/unocss/tree/main/packages/preset-web-fonts) - Web fonts at ease.
-- [@unocss/preset-typography](https://github.com/unocss/unocss/tree/main/packages/preset-typography) - The typography preset.
-- [@unocss/preset-tagify](https://github.com/unocss/unocss/tree/main/packages/preset-tagify) - Tagify Mode for UnoCSS.
-- [@unocss/preset-rem-to-px](https://github.com/unocss/unocss/tree/main/packages/preset-rem-to-px) - Coverts rem to px for utils.
+- [@unocss/preset-uno](https://github.com/unocss/unocss/tree/main/packages/preset-uno) - 默认预设 (现在它等同于 `@unocss/preset-wind`).
+- [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini) - 最小但必不可少的规则和变体。
+- [@unocss/preset-wind](https://github.com/unocss/unocss/tree/main/packages/preset-wind) - Tailwind / Windi CSS 简洁预设。
+- [@unocss/preset-attributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify) - 对其它预设和规则提供 [属性模式](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)。
+- [@unocss/preset-icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons) - 使用任何图标作为类实用程序。
+- [@unocss/preset-web-fonts](https://github.com/unocss/unocss/tree/main/packages/preset-web-fonts) - 轻松使用 Web fonts。
+- [@unocss/preset-typography](https://github.com/unocss/unocss/tree/main/packages/preset-typography) - 排版预设。
+- [@unocss/preset-tagify](https://github.com/unocss/unocss/tree/main/packages/preset-tagify) - UnoCSS 的标签模式。
+- [@unocss/preset-rem-to-px](https://github.com/unocss/unocss/tree/main/packages/preset-rem-to-px) - 将实用程序的 rem 转换为 px。
 
-###### Community Presets
+###### 社区预设
 
-- [unocss-preset-scalpel](https://github.com/macheteHot/unocss-preset-scalpel) - Scalpel Preset by [@macheteHot](https://github.com/macheteHot/).
-- [unocss-preset-chroma](https://github.com/chu121su12/unocss-preset-chroma) - Gradient Preset by [@chu121su12](https://github.com/chu121su12).
-- [unocss-preset-scrollbar](https://github.com/action-hong/unocss-preset-scrollbar) - Scrollbar Preset by [@action-hong](https://github.com/action-hong).
+- [unocss-preset-scalpel](https://github.com/macheteHot/unocss-preset-scalpel) - UnoCSS 手术刀预设 by [@macheteHot](https://github.com/macheteHot/).
+- [unocss-preset-chroma](https://github.com/chu121su12/unocss-preset-chroma) - 渐变预设 by [@chu121su12](https://github.com/chu121su12).
+- [unocss-preset-scrollbar](https://github.com/action-hong/unocss-preset-scrollbar) - Scrollbar 预设 by [@action-hong](https://github.com/action-hong).
 
-### Using Presets
+### 使用预设
 
-To set presets to your project:
+为您的项目设置预设：
 
 ```ts
 // vite.config.ts
@@ -165,9 +165,9 @@ export default {
 }
 ```
 
-When the `presets` option is specified, the default preset will be ignored.
+当指定 `presets` 选项时，默认预设将被忽略。
 
-To disable the default preset, you can set `presets` to an empty array:
+要禁用默认预设，您可以将 `presets` 设置为空数组：
 
 ```ts
 // vite.config.ts
@@ -185,11 +185,11 @@ export default {
 }
 ```
 
-### Custom Rules
+### 自定义规则
 
-###### Static Rules
+###### 静态规则
 
-Writing custom rules for UnoCSS is super easy. For example:
+为 UnoCSS 编写自定义规则非常简单。 例如：
 
 ```ts
 rules: [
@@ -197,15 +197,15 @@ rules: [
 ]
 ```
 
-You will have the following CSS generated whenever `m-1` is detected in users' codebase:
+每当在用户的代码库中检测到 `m-1` 时，您将生成以下 CSS：
 
 ```css
 .m-1 { margin: 0.25rem; }
 ```
 
-###### Dynamic Rules
+###### 动态规则
 
-To make it smarter, change the matcher to a RegExp and the body to a function:
+为了让它更智能，将匹配器更改为正则表达式，将正文更改为函数：
 
 ```ts
 rules: [
@@ -214,9 +214,9 @@ rules: [
 ]
 ```
 
-The first argument of the body function is the match result, you can destructure it to get the matched groups.
+函数的第一个参数是匹配结果，您可以对其进行解构以获取匹配的组。
 
-For example, with the following usage:
+例如，使用以下用法：
 
 ```html
 <div class="m-100">
@@ -227,7 +227,7 @@ For example, with the following usage:
 </div>
 ```
 
-the corresponding CSS will be generated:
+将生成相应的 CSS：
 
 ```css
 .m-100 { margin: 25rem; }
@@ -235,18 +235,18 @@ the corresponding CSS will be generated:
 .p-5 { padding: 1.25rem; }
 ```
 
-Congratulations! Now you got your own powerful atomic CSS utilities, enjoy!
+恭喜！现在你拥有了自己强大的原子化 CSS 实用程序，尽情享受吧！
 
-###### Full Controlled Rules
+###### 完全控制规则
 
 <details>
-<summary>This is an advanced feature, you don't need it in most of the cases.</summary>
+<summary>这是一项高级功能，在大多数情况下您不需要它。</summary>
 
 <br>
 
-When you really need some advanced rules that can't be covered by the combination of [Dynamic Rules](#dynamic-rules) and [Variants](#custom-variants), we also provide a way to give you full control to generate the CSS.
+当您确实需要一些 [Dynamic Rules](#dynamic-rules) 和 [Variants](#custom-variants) 组合无法涵盖的高级规则时，我们还提供了一种让您完全控制生成的方法 的CSS。
 
-By returning a `string` from the dynamic rule's body function, it will be directly passed to the generated CSS. That also means you would need to take care of things like CSS escaping, variants applying, CSS constructing, and so on.
+通过从动态规则的主体函数返回一个 `string` ，它将直接传递给生成的 CSS。 这也意味着您需要处理诸如 CSS 转义、变体应用、CSS 构造等。
 
 ```ts
 import Unocss, { toEscapedSelector as e } from 'unocss'
@@ -286,17 +286,17 @@ ${selector}::after {
 })
 ```
 
-You might need to read some code to take the full power of it.
+您可能需要阅读一些代码才能充分利用它。
 
 </details>
 
-### Ordering
+### 顺序
 
-UnoCSS respects the order of the rules you defined in the generated CSS. Latter ones come with higher priority.
+UnoCSS 尊重您在生成的 CSS 中定义的规则的顺序。 后者具有更高的优先级。
 
-### Shortcuts
+### 快捷方式
 
-The shortcuts functionality that UnoCSS provides is similar to [Windi CSS's](https://windicss.org/features/shortcuts.html) one
+UnoCSS 提供的快捷方式功能类似于 [Windi CSS's](https://windicss.org/features/shortcuts.html)
 
 <!--eslint-skip-->
 
@@ -310,9 +310,9 @@ shortcuts: {
 }
 ```
 
-In addition to the plain mapping, UnoCSS also allows you to define dynamic shortcuts.
+除了普通映射，UnoCSS 还允许您定义动态快捷方式。
 
-Similar to [Rules](#custom-rules), a dynamic shortcut is the combination of a matcher RegExp and a handler function.
+与 [Rules](#custom-rules) 类似，动态快捷方式是匹配器 RegExp 和处理程序函数的组合。
 
 ```ts
 shortcuts: [
@@ -325,7 +325,7 @@ shortcuts: [
 ]
 ```
 
-With this, we could use `btn-green` and `btn-red` to generate the following CSS:
+有了这个，我们可以使用 `btn-green` 和 `btn-red` 来生成以下 CSS：
 
 ```css
 .btn-green {
@@ -352,28 +352,27 @@ With this, we could use `btn-green` and `btn-red` to generate the following CSS:
 }
 ```
 
-### Rules Merging
+### 规则合并
 
-By default, UnoCSS will merge CSS rules with the same body to minimize the CSS size.
-
-For example, `<div class="m-2 hover:m2">` will generate
+默认情况下，UnoCSS 会将 生成相同CSS 的规则统一合并，以最小化 CSS 大小。
+例如，`<div class="m-2 hover:m2">` 会生成
 
 ```css
 .hover\:m2:hover, .m-2 { margin: 0.5rem; }
 ```
 
-instead of two separate rules:
+而不是两个单独的规则：
 
 ```css
 .hover\:m2:hover { margin: 0.5rem; }
 .m-2 { margin: 0.5rem; }
 ```
 
-### Style Resetting
+### 样式重置
 
-UnoCSS does not provide style resetting or preflight by default for maximum flexibility and does not populate your global CSS. If you use UnoCSS along with other CSS frameworks, they probably already do the resetting for you. If you use UnoCSS alone, you can use resetting libraries like [Normalize.css](https://necolas.github.io/normalize.css/).
+UnoCSS 默认不提供样式重置或预检以实现最大的灵活性，并且不填充您的全局 CSS。 如果您将 UnoCSS 与其他 CSS 框架一起使用，它们可能已经为您完成了重置。 如果你单独使用 UnoCSS，你可以使用 [Normalize.css](https://necolas.github.io/normalize.css/) 之类的重置库。
 
-We also provide a small collection for you to grab them quickly:
+我们还提供了一个小合集供您快速获取它们：
 
 ```bash
 npm i @unocss/reset
@@ -391,11 +390,11 @@ import '@unocss/reset/eric-meyer.css'
 import '@unocss/reset/tailwind.css'
 ```
 
-Learn more at [@unocss/reset](https://github.com/unocss/unocss/tree/main/packages/reset).
+在 [@unocss/reset](https://github.com/unocss/unocss/tree/main/packages/reset) 上了解更多。
 
-### Preflight
+### 预检
 
-You can inject raw css as preflights from the configuration. The resolved `theme` is available to customize the css.
+您可以从配置中注入原始 css 作为预检。 已解析的 `主题` 可用于自定义 css。
 
 <!--eslint-skip-->
 
@@ -413,9 +412,9 @@ preflights: [
 ]
 ```
 
-### Custom Variants
+### 自定义变体
 
-[Variants](https://windicss.org/utilities/general/variants.html) allows you to apply some variations to your existing rules. For example, to implement the `hover:` variant from Tailwind:
+[Variants](https://windicss.org/utilities/general/variants.html) 允许您对现有规则应用一些变体。 例如，要实现 Tailwind 中的 `hover:` 变体：
 
 <!--eslint-skip-->
 
@@ -437,32 +436,31 @@ rules: [
 ]
 ```
 
-- `matcher` controls when the variant is enabled. If the return value is a string, it will be used as the selector for matching the rules.
-- `selector` provides the availability of customizing the generated CSS selector.
+- `matcher` 控制何时启用变体。 如果返回值是一个字符串，它将作为匹配规则的选择器。
+- `selector` 提供了自定义生成的 CSS 选择器的可用性。
 
-Let's have a tour of what happened when matching for `hover:m-2`:
+让我们看看匹配 `hover:m-2` 时发生了什么：
 
-- `hover:m-2` is extracted from users usages
-- `hover:m-2` send to all variants for matching
-- `hover:m-2` is matched by our variant and returns `m-2`
-- the result `m-2` will be used for the next round of variants matching
-- if no other variant is matched, `m-2` will then goes to match the rules
-- our first rule get matched and generates `.m-2 { margin: 0.5rem; }`
-- finally, we apply our variants transformation to the generated CSS. In this case, we prepended `:hover` to the `selector` hook
+- `hover:m-2` 是从用户使用中提取的
+- `hover:m-2` 发送到所有变体进行匹配
+- `hover:m-2` 与我们的变体匹配并返回 `m-2`
+- 结果 `m-2` 将用于下一轮变体匹配
+- 如果没有其他变体匹配，`m-2` 将去匹配规则
+- 我们的第一条规则得到匹配并生成 `.m-2 { margin: 0.5rem; }`
+- 最后，我们将变体转换应用于生成的 CSS。 在这种情况下，我们在 `selector` 钩子前面加上 `:hover`
 
-As a result, the following CSS will be generated:
+结果，将生成以下 CSS：
 
 ```css
 .hover\:m-2:hover { margin: 0.5rem; }
 ```
 
-With this, we could have `m-2` applied only when users hover over the element.
+有了这个，我们可以只在用户将鼠标悬停在元素上时应用 `m-2`。
 
-The variant system is very powerful and can't be covered fully in this guide, you can check [the default preset's implementation](https://github.com/unocss/unocss/tree/main/packages/preset-mini/src/variants) to see more advanced usages.
+变体系统非常强大，本指南无法完整介绍，您可以查看[默认预设的实现]（https://github.com/unocss/unocss/tree/main/packages/preset-mini/src/variants) 以查看更高级的用法。
+### 继承主题
 
-### Extend Theme
-
-UnoCSS also supports the theming system that you might be familiar with in Tailwind / Windi. At the user level, you can specify the `theme` property in your config and it will be deep merged to the default theme.
+UnoCSS 还支持您可能在 Tailwind / Windi 中熟悉的主题系统。 在用户级别，您可以在配置中指定 `theme` 属性，它将深度合并到默认主题。
 
 <!--eslint-skip-->
 
@@ -481,7 +479,7 @@ theme: {
 }
 ```
 
-To consume the theme in rules:
+在规则中使用主题：
 
 ```ts
 rules: [
@@ -492,11 +490,11 @@ rules: [
 ]
 ```
 
-### Layers
+### Layers（层级）
 
-The order of CSS will affect their priorities. While we will [retain the order of rules](#ordering), sometimes you may want to group some utilities to have more explicit control of their order.
+CSS 的顺序会影响它们的优先级。 虽然我们将[保留规则的顺序](#ordering)，但有时您可能希望将一些实用程序分组以更明确地控制它们的顺序。
 
-Unlike Tailwind, which offers 3 fixed layers (`base`, `components`, `utilities`), UnoCSS allows you to define the layers as you want. To set the layer, you can pass the metadata as the third item of your rules:
+与Tailwind提供 3 个固定层（`base`、`components`、`utilities`）不同，UnoCSS 允许您根据需要定义层。要设置图层，您可以将元数据作为规则的第三项传递：
 
 ```ts
 rules: [
@@ -506,7 +504,7 @@ rules: [
 ]
 ```
 
-This will generate:
+这将会生成：
 
 ```css
 /* layer: default */
@@ -515,7 +513,7 @@ This will generate:
 .m-2 { margin: 0.5rem; }
 ```
 
-Layering also can be set on each preflight:
+分层也可以在每个预检上设置：
 
 ```ts
 preflights: [
@@ -526,7 +524,7 @@ preflights: [
 ]
 ```
 
-You can control the order of layers by:
+您可以通过以下方式控制图层的顺序：
 
 <!--eslint-skip-->
 
@@ -539,9 +537,9 @@ layers: {
 }
 ```
 
-Layers without specified order will be sorted alphabetically.
+没有指定顺序的图层将按字母顺序排序。
 
-When you want to have your custom CSS between layers, you can update your entry module:
+当你想在层之间有你的自定义 CSS 时，你可以更新你的入口模块：
 
 ```ts
 // 'uno:[layer-name].css'
@@ -554,9 +552,11 @@ import './my-custom.css'
 import 'uno:utilities.css'
 ```
 
-### Utilities Preprocess & Prefixing
+### Preprocess & Prefixing Hooks
 
-UnoCSS also provides the ability to preprocess and transform extracted utilities before processing to the matcher. For example, the following example allows you to add a global prefix to all utilities:
+UnoCSS 还提供了在处理到匹配器之前预处理和转换提取的实用程序的能力。 
+
+例如，以下示例允许您为所有实用程序添加全局前缀：
 
 <!--eslint-skip-->
 
@@ -568,27 +568,27 @@ preprocess(matcher) {
 }
 ```
 
-### Scanning
+### 扫描
 
-By default UnoCSS will scan for components files like: `.jsx`, `.tsx`, `.vue`, `.md`, `.html`, `.svelte`, `.astro`.
+UnoCSS在默认情况下会扫描组件文件，如：`.jsx`, `.tsx`, `.vue`, `.md`, `.html`, `.svelte`, `.astro`.
 
-`.js` and `.ts` files are **NOT included by default**. You can add `@unocss-include`, per-file basis, anywhere in the file that you want UnoCSS to scan, or add `*.js` or `*.ts` in the configuration to include all js/ts files as scan targets. Similarly, you can also add `@unocss-ignore` to bypass the scanning and transforming for a file.
+`.js` 和 `.ts` 文件**默认不包含**。 您可以在您希望 UnoCSS 扫描的文件中的任何位置添加 `@unocss-include`，基于每个文件，或者在配置中添加 `*.js` 或 `*.ts` 以包含所有 js/ts 文件 扫描目标。 同样，您也可以添加`@unocss-ignore` 来绕过文件的扫描和转换。
 
-### Safelist
+### 安全列表
 
-Sometimes you might want have to use dynamic concatenations like:
+有时您可能需要使用动态连接，例如：
 
 ```html
 <div class="p-${size}"></div>
 ```
 
-Due the fact that UnoCSS works in build time using static extracting, at the compile time we can't possibility know all the combination of the utilities. For that, you can configure the `safelist` option.
+由于 UnoCSS 使用静态提取在构建时工作，在编译时我们不可能知道这些实用程序的所有组合。 为此，您可以配置 `safelist` 选项。
 
 ```ts
 safelist: 'p-1 p-2 p-3 p-4'.split(' ')
 ```
 
-the corresponding CSS will be always generated:
+将始终生成相应的 CSS：
 
 ```css
 .p-1 { padding: 0.25rem; }
@@ -597,7 +597,7 @@ the corresponding CSS will be always generated:
 .p-4 { padding: 1rem; }
 ```
 
-Or more flexible:
+或者更灵活：
 
 ```ts
 safelist: [
@@ -605,17 +605,18 @@ safelist: [
 ]
 ```
 
-If you are seaking for the true dynamic generation at the runtime, you may check the [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime) package.
+如果您正在寻找运行时真正的动态生成，您可以查看 [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime)。
 
-### Inspector
+### 检查
 
-From v0.7.0, our Vite plugin now ships with a dev inspector ([@unocss/inspector](https://github.com/unocss/unocss/tree/main/packages/inspector)) for you to view, play and analyse your custom rules and setup. Visit `http://localhost:3000/__unocss` in your Vite dev server to see it.
+从 v0.7.0 开始，我们的 Vite 插件现在附带一个开发检查器 ([@unocss/inspector](https://github.com/unocss/unocss/tree/main/packages/inspector)) 供您查看、试玩和 分析您的自定义规则和设置。 在你的 Vite 开发服务器中访问 `http://localhost:3000/__unocss` 来查看它。
 
 <img src="https://user-images.githubusercontent.com/11247099/140885990-1827f5ce-f12a-4ed4-9d63-e5145a65fb4a.png">
 
 ### Runtime (CSS-in-JS)
 
-See [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime)
+请查看 [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime)
+
 
 ## Acknowledgement
 

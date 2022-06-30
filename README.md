@@ -76,7 +76,7 @@ export default {
 }
 ```
 
-添加 `uno.css` 到你的主入口：
+在你的主入口添加 `uno.css` ：
 
 ```ts
 // main.ts

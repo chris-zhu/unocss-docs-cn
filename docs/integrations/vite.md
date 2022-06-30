@@ -105,7 +105,7 @@ import 'virtual:unocss-devtools'
 
 ### React
 
-**WARNING**: You should import the `uno.css` virtual module using `import 'virtual:uno.css'` instead `import 'uno.css'`. When you start the dev server first time, you'll need to update some style module to get it working (we're trying to fix it).
+**警告**: 你应该使用 `import 'virtual:uno.css'` 替代 `import 'uno.css'` 来导入 `uno.css` 虚拟模块。当您第一次启动开发服务器时，您需要更新一些样式模块以使其正常工作（我们正在尝试修复它）。
 
 如果你正在使用 `@vitejs/plugin-react`:
 
@@ -383,7 +383,7 @@ template.innerHTML = `
 
 ### Solid
 
-**WARNING**: You should import the `uno.css` virtual module using `import 'virtual:uno.css'` instead `import 'uno.css'`. When you start the dev server first time, you'll need to update some style module to get it working (we're trying to fix it).
+**警告**: 你应该使用 `import 'virtual:uno.css'` 替代 `import 'uno.css'` 来导入 `uno.css` 虚拟模块。当您第一次启动开发服务器时，您需要更新一些样式模块以使其正常工作（我们正在尝试修复它）。
 
 ```ts
 // vite.config.js

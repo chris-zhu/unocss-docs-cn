@@ -23,4 +23,4 @@ module.exports = {
 }
 ```
 
-或者你可以在 `unocss.config.js` 或 `unocss.config.ts` 中有配置文件。
+或者你可以在 `unocss.config.js` 或 `unocss.config.ts` 中进行配置。

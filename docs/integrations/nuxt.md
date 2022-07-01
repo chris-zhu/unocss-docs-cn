@@ -50,3 +50,5 @@ export default {
   },
 }
 ```
+
+或者你可以在 `unocss.config.js` 或 `unocss.config.ts` 中进行配置。

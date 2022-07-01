@@ -276,5 +276,10 @@ export default defineConfig({
       ],
     },
 
+    algolia: {
+      appId: 'Y2FD9M8BUN',
+      apiKey: '6e33b98070a934a735840d9b85293348',
+      indexName: 'unocss_docs_cn',
+    },
   },
 })

@@ -423,3 +423,7 @@ export default defineConfig({
 ```
 
 在 [examples/vite-elm](https://github.com/unocss/unocss/tree/main/examples/vite-elm) 目录中有一个 `Vite + Elm` 示例项目。
+
+## License
+
+MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

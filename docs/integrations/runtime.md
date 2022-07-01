@@ -100,3 +100,7 @@ initUnocssRuntime({ /* options */ })
   This text will only be visible in blue color.
 </div>
 ```
+
+## License
+
+MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

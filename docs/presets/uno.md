@@ -34,3 +34,7 @@ Unocss({
 ```
 
 有关默认预设的更多详细信息，您可以查看我们的 [playground](https://unoc.antfu.me/play) 并尝试一下。
+
+## License
+
+MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

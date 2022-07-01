@@ -598,3 +598,7 @@ safelist: [
 ### Runtime (CSS-in-JS)
 
 请查看 [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime)
+
+## License
+
+MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

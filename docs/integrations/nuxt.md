@@ -52,3 +52,7 @@ export default {
 ```
 
 或者你可以在 `unocss.config.js` 或 `unocss.config.ts` 中进行配置。
+
+## License
+
+MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

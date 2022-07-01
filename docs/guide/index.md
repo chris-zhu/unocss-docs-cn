@@ -1,5 +1,4 @@
-
-## 什么是 UnoCSS
+# 什么是 UnoCSS
 
 UnoCSS 是一个原子化 CSS 引擎，而不是一个框架。所有的设计都考虑到了灵活性和性能。在 UnoCSS 中，没有核心实体程序，所有功能都是通过预置提供。
 
@@ -501,7 +500,7 @@ rules: [
 preflights: [
   {
     layer: 'my-layer',
-    getCSS: async () => (await fetch('my-style.css')).text(),
+    getCSS: async() => (await fetch('my-style.css')).text(),
   },
 ]
 ```

@@ -59,12 +59,12 @@ export default defineConfig({
         ],
       },
       { text: '配置', link: '/config/' },
-      { 
-        text: 'Meta', 
+      {
+        text: 'Meta',
         items: [
-          {text: '规则', link: '/meta/rules'},
-          {text: '变体', link: '/meta/variants'},
-        ]
+          { text: '规则', link: '/meta/rules' },
+          { text: '变体', link: '/meta/variants' },
+        ],
       },
       // { text: 'Playground', link: 'https://unocss.antfu.me/' },
       {
@@ -85,8 +85,196 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/unocss/unocss' },
     ],
-    // sidebar: {
-    //   '/config': 'auto',
-    // },
+    sidebar: {
+      '/integrations/': [
+        {
+          text: '集成',
+          items: [
+            {
+              text: 'Vite',
+              link: '/integrations/vite',
+            },
+            {
+              text: 'Nuxt',
+              link: '/integrations/nuxt',
+            },
+            {
+              text: 'Webpack',
+              link: '/integrations/webpack',
+            },
+            {
+              text: 'Runtime',
+              link: '/integrations/runtime',
+            },
+            {
+              text: 'VS Code',
+              link: '/integrations/vscode',
+            },
+          ],
+        },
+      ],
+      '/presets': [
+        {
+          text: '预设',
+          items: [
+            {
+              text: 'Uno',
+              link: '/presets/uno',
+            },
+            {
+              text: 'Mini',
+              link: '/presets/mini',
+            },
+            {
+              text: 'Wind',
+              link: '/presets/wind',
+            },
+            {
+              text: 'Icons',
+              link: '/presets/icons',
+            },
+            {
+              text: 'Attributify',
+              link: '/presets/attributify',
+            },
+            {
+              text: 'Typography',
+              link: '/presets/typography',
+            },
+            {
+              text: 'Web Fonts',
+              link: '/presets/web-fonts',
+            },
+            {
+              text: 'rem-to-px',
+              link: '/presets/rem-to-px',
+            },
+            {
+              text: 'Tagify',
+              link: '/presets/tagify',
+            },
+          ],
+        },
+      ],
+      '/transformer': [
+        {
+          text: '转换器',
+          items: [
+            {
+              text: 'Directives',
+              link: '/transformer/directives',
+            },
+            {
+              text: 'Variant Group',
+              link: '/transformer/variant-group',
+            },
+            {
+              text: 'Compile Class',
+              link: '/transformer/compile-class',
+            },
+          ],
+        },
+      ],
+      '/guide': [
+        {
+          text: '集成',
+          items: [
+            {
+              text: 'Vite',
+              link: '/integrations/vite',
+            },
+            {
+              text: 'Nuxt',
+              link: '/integrations/nuxt',
+            },
+            {
+              text: 'Webpack',
+              link: '/integrations/webpack',
+            },
+            {
+              text: 'Runtime',
+              link: '/integrations/runtime',
+            },
+            {
+              text: 'VS Code',
+              link: '/integrations/vscode',
+            },
+          ],
+        },
+        {
+          text: '预设',
+          items: [
+            {
+              text: 'Uno',
+              link: '/presets/uno',
+            },
+            {
+              text: 'Mini',
+              link: '/presets/mini',
+            },
+            {
+              text: 'Wind',
+              link: '/presets/wind',
+            },
+            {
+              text: 'Icons',
+              link: '/presets/icons',
+            },
+            {
+              text: 'Attributify',
+              link: '/presets/attributify',
+            },
+            {
+              text: 'Typography',
+              link: '/presets/typography',
+            },
+            {
+              text: 'Web Fonts',
+              link: '/presets/web-fonts',
+            },
+            {
+              text: 'rem-to-px',
+              link: '/presets/rem-to-px',
+            },
+            {
+              text: 'Tagify',
+              link: '/presets/tagify',
+            },
+          ],
+        },
+        {
+          text: '转换器',
+          items: [
+            {
+              text: 'Directives',
+              link: '/transformer/directives',
+            },
+            {
+              text: 'Variant Group',
+              link: '/transformer/variant-group',
+            },
+            {
+              text: 'Compile Class',
+              link: '/transformer/compile-class',
+            },
+          ],
+        },
+        {
+          text: 'Meta',
+          items: [
+            {
+              text: '规则',
+              link: '/meta/rules',
+            },
+            {
+              text: '变体',
+              link: '/meta/variants',
+            },
+          ],
+        },
+
+      ],
+    },
+
   },
 })

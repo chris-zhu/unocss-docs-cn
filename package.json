@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/chris-zhu/unocss-docs-cn.git"
   },
-  "keywords": ["unocss", "unocss-docs", "unocss-docs-cn"],
+  "keywords": [
+    "unocss",
+    "unocss-docs",
+    "unocss-docs-cn"
+  ],
   "author": "chris-zhu <https://github.com/chris-zhu>",
   "license": "MIT",
   "bugs": {
@@ -19,6 +23,8 @@
   },
   "homepage": "https://github.com/chris-zhu/unocss-docs-cn#readme",
   "devDependencies": {
+    "@chris-zhu/eslint-config": "^1.0.5",
+    "eslint": "^8.18.0",
     "vitepress": "1.0.0-alpha.2"
   }
 }

@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'Nuxt', link: '/integrations/nuxt' },
           { text: 'Webpack', link: '/integrations/webpack' },
           { text: 'Runtime', link: '/integrations/runtime' },
+          { text: 'VS Code', link: '/integrations/vscode' },
         ],
       },
       {

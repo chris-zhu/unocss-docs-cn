@@ -1,17 +1,52 @@
-# Nuxt
+# @unocss/nuxt
+
+UnoCSS Nuxt 模块
+
+## 支持状态
+
+| | Nuxt 2 | Nuxt Bridge | Nuxt 3 |
+| --- | --- | --- | --- |
+| Webpack Dev | ✅ | ✅ | 🚧 |
+| Webpack Build | ✅ | ✅ | ✅ |
+| Vite Dev | - | ✅ | ✅ |
+| Vite Build | - | ✅ | ✅ |
+
+## 安装
 
 ```bash
 npm i -D @unocss/nuxt
 ```
 
-```ts
+```js
 // nuxt.config.js
 
 export default {
-  buildModules: [
+  modules: [
     '@unocss/nuxt',
   ],
 }
 ```
 
-请参阅 [@unocss/nuxt](https://github.com/unocss/unocss/tree/main/packages/nuxt) 有关的完整文档 
+## 配置
+
+在 Nuxt 模块中，我们还提供了一些官方预设的快捷键：
+
+```js
+// nuxt.config.js
+
+export default {
+  modules: [
+    '@unocss/nuxt',
+  ],
+  unocss: {
+    // presets
+    uno: true, // 启用 `@unocss/preset-uno`
+    icons: true, // 启用 `@unocss/preset-icons`
+    attributify: true, // 启用 `@unocss/preset-attributify`,
+
+    // core options
+    shortcuts: [],
+    rules: [],
+  },
+}
+```

@@ -18,12 +18,10 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/logo.png',
-    // editLink:{
-    //   // repo: 'unocss/unocss',
-    //   // branch: 'main',
-    //   pattern: '',
-    //   text: 'Suggest changes to this page',
-    // },
+    editLink: {
+      pattern: 'https://github.com/chris-zhu/unocss-docs-cn/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面',
+    },
     nav: [
       { text: '指引', link: '/guide/' },
       {
@@ -60,13 +58,12 @@ export default defineConfig({
       },
       { text: '配置', link: '/config/' },
       {
-        text: 'Meta',
+        text: 'Utilities',
         items: [
-          { text: '规则', link: '/meta/rules' },
-          { text: '变体', link: '/meta/variants' },
+          { text: '规则', link: '/utilities/rules/' },
+          { text: '变体', link: '/utilities/variants/' },
         ],
       },
-      // { text: 'Playground', link: 'https://unocss.antfu.me/' },
       {
         text: `v${version}`,
         items: [
@@ -81,11 +78,38 @@ export default defineConfig({
         ],
       },
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/unocss/unocss' },
     ],
     sidebar: {
+      '/utilities/rules/': [
+        {
+          text: 'General',
+          collapsed: false,
+          collapsible: true,
+          items: [
+            {
+              text: 'Color',
+              link: '/utilities/rules/color',
+            },
+          ],
+        },
+        {
+          text: '规则',
+          collapsed: false,
+          collapsible: true,
+          items: [
+            {
+              text: 'Align',
+              link: '/utilities/rules/align',
+            },
+            {
+              text: 'Background',
+              link: '/utilities/rules/background',
+            },
+          ],
+        },
+      ],
       '/integrations/': [
         {
           text: '集成',
@@ -260,22 +284,21 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Meta',
+          text: 'Utilities',
           items: [
             {
               text: '规则',
-              link: '/meta/rules',
+              link: '/utilities/rules',
             },
             {
               text: '变体',
-              link: '/meta/variants',
+              link: '/utilities/variants',
             },
           ],
         },
 
       ],
     },
-
     algolia: {
       appId: 'Y2FD9M8BUN',
       apiKey: '6e33b98070a934a735840d9b85293348',

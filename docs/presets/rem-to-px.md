@@ -15,7 +15,7 @@ import presetRemToPx from '@unocss/preset-rem-to-px'
 Unocss({
   presets: [
     presetUno(),
-    presetRemToPx()
+    presetRemToPx(),
   ],
 })
 ```

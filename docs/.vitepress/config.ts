@@ -1,6 +1,139 @@
 import { defineConfig } from 'vitepress'
 import { version } from '../../package.json'
 
+const Integrations = [
+  { text: 'Vite', link: '/integrations/vite' },
+  { text: 'Nuxt', link: '/integrations/nuxt' },
+  { text: 'Webpack', link: '/integrations/webpack' },
+  { text: 'Runtime', link: '/integrations/runtime' },
+  { text: 'VS Code', link: '/integrations/vscode' },
+]
+
+const Presets = [
+  { text: 'Uno', link: '/presets/uno' },
+  { text: 'Mini', link: '/presets/mini' },
+  { text: 'Wind', link: '/presets/wind' },
+  { text: 'Icons', link: '/presets/icons' },
+  { text: 'Attributify', link: '/presets/attributify' },
+  { text: 'Typography', link: '/presets/typography' },
+  { text: 'Web Fonts', link: '/presets/web-fonts' },
+  { text: 'rem-to-px', link: '/presets/rem-to-px' },
+  { text: 'Tagify', link: '/presets/tagify' },
+]
+
+const Transformer = [
+  { text: 'Directives', link: '/transformer/directives' },
+  { text: 'Variant Group', link: '/transformer/variant-group' },
+  { text: 'Compile Class', link: '/transformer/compile-class' },
+]
+
+const Utilities = [
+  { text: '规则', link: '/utilities/' },
+  { text: '变体', link: '/utilities/variants/' },
+]
+
+const nav = [
+  { text: '指引', link: '/guide/' },
+  {
+    text: '集成',
+    items: Integrations,
+  },
+  {
+    text: '预设',
+    items: Presets,
+  },
+  {
+    text: '转换器',
+    items: Transformer,
+  },
+  { text: '配置', link: '/config/' },
+  {
+    text: 'Utilities',
+    items: Utilities,
+  },
+  {
+    text: `v${version}`,
+    items: [
+      {
+        text: 'Release Notes',
+        link: 'https://github.com/unocss/unocss/releases',
+      },
+      {
+        text: 'Contributing',
+        link: 'https://github.com/unocss/unocss/blob/main/CONTRIBUTING.md',
+      },
+    ],
+  },
+]
+
+const sidebar = {
+  '/utilities/': [
+    {
+      text: 'General',
+      collapsed: false,
+      collapsible: true,
+      items: [
+        {
+          text: 'Color',
+          link: '/utilities/general/color',
+        },
+      ],
+    },
+    {
+      text: '规则',
+      collapsed: false,
+      collapsible: true,
+      items: [
+        {
+          text: 'Align',
+          link: '/utilities/rules/align',
+        },
+        {
+          text: 'Background',
+          link: '/utilities/rules/background',
+        },
+      ],
+    },
+  ],
+  '/integrations/': [
+    {
+      text: '集成',
+      items: Integrations,
+    },
+  ],
+  '/presets': [
+    {
+      text: '预设',
+      items: Presets,
+    },
+  ],
+  '/transformer': [
+    {
+      text: '转换器',
+      items: Transformer,
+    },
+  ],
+  '/guide': [
+    {
+      text: '集成',
+      items: Integrations,
+    },
+    {
+      text: '预设',
+      items: Presets,
+    },
+    {
+      text: '转换器',
+      items: Transformer,
+    },
+    {
+      text: 'Utilities',
+      items: Utilities,
+    },
+
+  ],
+}
+
 export default defineConfig({
   title: 'UnoCSS',
   description: '即时、按需的原子化CSS引擎',
@@ -22,283 +155,11 @@ export default defineConfig({
       pattern: 'https://github.com/chris-zhu/unocss-docs-cn/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页面',
     },
-    nav: [
-      { text: '指引', link: '/guide/' },
-      {
-        text: '集成',
-        items: [
-          { text: 'Vite', link: '/integrations/vite' },
-          { text: 'Nuxt', link: '/integrations/nuxt' },
-          { text: 'Webpack', link: '/integrations/webpack' },
-          { text: 'Runtime', link: '/integrations/runtime' },
-          { text: 'VS Code', link: '/integrations/vscode' },
-        ],
-      },
-      {
-        text: '预设',
-        items: [
-          { text: 'Uno', link: '/presets/uno' },
-          { text: 'Mini', link: '/presets/mini' },
-          { text: 'Wind', link: '/presets/wind' },
-          { text: 'Icons', link: '/presets/icons' },
-          { text: 'Attributify', link: '/presets/attributify' },
-          { text: 'Typography', link: '/presets/typography' },
-          { text: 'Web Fonts', link: '/presets/web-fonts' },
-          { text: 'rem-to-px', link: '/presets/rem-to-px' },
-          { text: 'Tagify', link: '/presets/tagify' },
-        ],
-      },
-      {
-        text: '转换器',
-        items: [
-          { text: 'Directives', link: '/transformer/directives' },
-          { text: 'Variant Group', link: '/transformer/variant-group' },
-          { text: 'Compile Class', link: '/transformer/compile-class' },
-        ],
-      },
-      { text: '配置', link: '/config/' },
-      {
-        text: 'Utilities',
-        items: [
-          { text: '规则', link: '/utilities/rules/' },
-          { text: '变体', link: '/utilities/variants/' },
-        ],
-      },
-      {
-        text: `v${version}`,
-        items: [
-          {
-            text: 'Release Notes',
-            link: 'https://github.com/unocss/unocss/releases',
-          },
-          {
-            text: 'Contributing',
-            link: 'https://github.com/unocss/unocss/blob/main/CONTRIBUTING.md',
-          },
-        ],
-      },
-    ],
+    nav,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/unocss/unocss' },
     ],
-    sidebar: {
-      '/utilities/rules/': [
-        {
-          text: 'General',
-          collapsed: false,
-          collapsible: true,
-          items: [
-            {
-              text: 'Color',
-              link: '/utilities/rules/color',
-            },
-          ],
-        },
-        {
-          text: '规则',
-          collapsed: false,
-          collapsible: true,
-          items: [
-            {
-              text: 'Align',
-              link: '/utilities/rules/align',
-            },
-            {
-              text: 'Background',
-              link: '/utilities/rules/background',
-            },
-          ],
-        },
-      ],
-      '/integrations/': [
-        {
-          text: '集成',
-          items: [
-            {
-              text: 'Vite',
-              link: '/integrations/vite',
-            },
-            {
-              text: 'Nuxt',
-              link: '/integrations/nuxt',
-            },
-            {
-              text: 'Webpack',
-              link: '/integrations/webpack',
-            },
-            {
-              text: 'Runtime',
-              link: '/integrations/runtime',
-            },
-            {
-              text: 'VS Code',
-              link: '/integrations/vscode',
-            },
-          ],
-        },
-      ],
-      '/presets': [
-        {
-          text: '预设',
-          items: [
-            {
-              text: 'Uno',
-              link: '/presets/uno',
-            },
-            {
-              text: 'Mini',
-              link: '/presets/mini',
-            },
-            {
-              text: 'Wind',
-              link: '/presets/wind',
-            },
-            {
-              text: 'Icons',
-              link: '/presets/icons',
-            },
-            {
-              text: 'Attributify',
-              link: '/presets/attributify',
-            },
-            {
-              text: 'Typography',
-              link: '/presets/typography',
-            },
-            {
-              text: 'Web Fonts',
-              link: '/presets/web-fonts',
-            },
-            {
-              text: 'rem-to-px',
-              link: '/presets/rem-to-px',
-            },
-            {
-              text: 'Tagify',
-              link: '/presets/tagify',
-            },
-          ],
-        },
-      ],
-      '/transformer': [
-        {
-          text: '转换器',
-          items: [
-            {
-              text: 'Directives',
-              link: '/transformer/directives',
-            },
-            {
-              text: 'Variant Group',
-              link: '/transformer/variant-group',
-            },
-            {
-              text: 'Compile Class',
-              link: '/transformer/compile-class',
-            },
-          ],
-        },
-      ],
-      '/guide': [
-        {
-          text: '集成',
-          items: [
-            {
-              text: 'Vite',
-              link: '/integrations/vite',
-            },
-            {
-              text: 'Nuxt',
-              link: '/integrations/nuxt',
-            },
-            {
-              text: 'Webpack',
-              link: '/integrations/webpack',
-            },
-            {
-              text: 'Runtime',
-              link: '/integrations/runtime',
-            },
-            {
-              text: 'VS Code',
-              link: '/integrations/vscode',
-            },
-          ],
-        },
-        {
-          text: '预设',
-          items: [
-            {
-              text: 'Uno',
-              link: '/presets/uno',
-            },
-            {
-              text: 'Mini',
-              link: '/presets/mini',
-            },
-            {
-              text: 'Wind',
-              link: '/presets/wind',
-            },
-            {
-              text: 'Icons',
-              link: '/presets/icons',
-            },
-            {
-              text: 'Attributify',
-              link: '/presets/attributify',
-            },
-            {
-              text: 'Typography',
-              link: '/presets/typography',
-            },
-            {
-              text: 'Web Fonts',
-              link: '/presets/web-fonts',
-            },
-            {
-              text: 'rem-to-px',
-              link: '/presets/rem-to-px',
-            },
-            {
-              text: 'Tagify',
-              link: '/presets/tagify',
-            },
-          ],
-        },
-        {
-          text: '转换器',
-          items: [
-            {
-              text: 'Directives',
-              link: '/transformer/directives',
-            },
-            {
-              text: 'Variant Group',
-              link: '/transformer/variant-group',
-            },
-            {
-              text: 'Compile Class',
-              link: '/transformer/compile-class',
-            },
-          ],
-        },
-        {
-          text: 'Utilities',
-          items: [
-            {
-              text: '规则',
-              link: '/utilities/rules',
-            },
-            {
-              text: '变体',
-              link: '/utilities/variants',
-            },
-          ],
-        },
-
-      ],
-    },
+    sidebar,
     algolia: {
       appId: 'Y2FD9M8BUN',
       apiKey: '6e33b98070a934a735840d9b85293348',

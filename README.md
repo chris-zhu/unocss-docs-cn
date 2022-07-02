@@ -46,13 +46,13 @@ The instant on-demand Atomic CSS engine.
 ###### 基准
 
 ```
-3/26/2022, 11:41:26 PM
+2022/7/2 08:38:12 PM
 1656 utilities | x50 runs (min build time)
 
-none                             12.42 ms / delta.      0.00 ms
-unocss       v0.30.6             20.98 ms / delta.      8.57 ms (x1.00)
-tailwindcss  v3.0.23           1621.38 ms / delta.   1608.96 ms (x187.79)
-windicss     v3.5.1            1855.86 ms / delta.   1843.45 ms (x215.16)
+none                              5.87 ms / delta.      0.00 ms 
+unocss       v0.43.0              9.17 ms / delta.      3.30 ms (x1.00)
+tailwindcss  v3.1.4             497.24 ms / delta.    491.37 ms (x148.70)
+windicss     v3.5.5             869.47 ms / delta.    863.60 ms (x261.35)
 ```
 
 ## 安装
@@ -519,7 +519,7 @@ rules: [
 preflights: [
   {
     layer: 'my-layer',
-    getCSS: async () => (await fetch('my-style.css')).text(),
+    getCSS: async() => (await fetch('my-style.css')).text(),
   },
 ]
 ```
